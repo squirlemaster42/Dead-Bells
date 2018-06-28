@@ -7,7 +7,6 @@ import com.nerds.states.State;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.util.Stack;
 
 public class Game implements Runnable{
 
