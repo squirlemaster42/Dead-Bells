@@ -7,7 +7,7 @@ public abstract class State {
     private final String name;
     private static State currentState;
 
-    public State(String name){
+    public State(final String name){
         this.name = name;
     }
 
