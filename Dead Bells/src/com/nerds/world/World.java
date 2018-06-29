@@ -26,13 +26,13 @@ public class World {
 
     public void tick(){
         if(entitySet != null){
-            tick();
+            entitySet.tick();
         }
     }
 
     public void render(Graphics g){
         if(entitySet != null){
-            render(g);
+            entitySet.render(g);
         }
     }
 
