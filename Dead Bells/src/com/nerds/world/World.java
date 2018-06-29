@@ -25,11 +25,15 @@ public class World {
     }
 
     public void tick(){
-
+        if(entitySet != null){
+            tick();
+        }
     }
 
     public void render(Graphics g){
-
+        if(entitySet != null){
+            render(g);
+        }
     }
 
     private int[][] loadTileSet(final String path){
