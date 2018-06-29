@@ -1,5 +1,6 @@
 package com.nerds.main;
 
+import com.nerds.graphics.Assets;
 import com.nerds.graphics.Screen;
 import com.nerds.input.KeyManager;
 import com.nerds.input.MouseManager;
@@ -38,6 +39,8 @@ public class Game implements Runnable{
         screen.getFrame().addMouseMotionListener(mouseManager);
         screen.getCanvas().addMouseListener(mouseManager);
         screen.getCanvas().addMouseMotionListener(mouseManager);
+
+        Assets.init();
 
         mainMenu = new MainMenuState();
         State.setState(mainMenu);
