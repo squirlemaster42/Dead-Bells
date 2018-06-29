@@ -3,8 +3,11 @@ package com.nerds.world;
 import com.nerds.entity.EntitySet;
 import com.nerds.utils.Utils;
 
-import java.awt.*;
-import java.io.*;
+import java.awt.Graphics;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class World {
 
