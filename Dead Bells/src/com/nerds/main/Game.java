@@ -1,6 +1,8 @@
 package com.nerds.main;
 
 import com.nerds.graphics.Screen;
+import com.nerds.input.KeyManager;
+import com.nerds.input.MouseManager;
 import com.nerds.states.MainMenuState;
 import com.nerds.states.State;
 
@@ -16,16 +18,26 @@ public class Game implements Runnable{
     private Graphics g;
     private Thread thread;
     private final Dimension screenSize;
+    private final KeyManager keyManager;
+    private final MouseManager mouseManager;
 
     //States
     private State mainMenu;
 
     public Game(final Dimension screenSize){
         this.screenSize = screenSize;
+
+        keyManager = new KeyManager();
+        mouseManager = new MouseManager();
     }
 
     private void init(){
         screen = new Screen(screenSize);
+        screen.getFrame().addKeyListener(keyManager);
+        screen.getFrame().addMouseListener(mouseManager);
+        screen.getFrame().addMouseMotionListener(mouseManager);
+        screen.getCanvas().addMouseListener(mouseManager);
+        screen.getCanvas().addMouseMotionListener(mouseManager);
 
         mainMenu = new MainMenuState();
         State.setState(mainMenu);
