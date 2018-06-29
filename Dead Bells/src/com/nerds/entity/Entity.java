@@ -3,6 +3,7 @@ package com.nerds.entity;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public abstract class Entity {
 
@@ -24,4 +25,21 @@ public abstract class Entity {
 
     public abstract void tick();
     public abstract void render(Graphics g);
+
+    public boolean checkEntityCollision(float xOffset, float yOffset, ArrayList<Entity> entities){
+        for(Entity e : entities){
+            if(e.equals(this)){
+                continue;
+            }
+            if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(xOffset, yOffset))){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public Rectangle getCollisionBounds(float xOffset, float yOffset){
+        return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y +yOffset), bounds.width, bounds.height);
+    }
 }
