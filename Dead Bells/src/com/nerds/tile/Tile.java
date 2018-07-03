@@ -5,6 +5,9 @@ import java.awt.image.BufferedImage;
 
 public abstract class Tile{
 
+    public static final int TILEWIDTH = 32;
+    public static final int TILEHEIGHT = 32;
+
     private final float x, y;
     private final int width, height;
     private final BufferedImage image;

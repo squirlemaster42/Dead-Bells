@@ -15,7 +15,6 @@ public class EntitySet {
         entityArray.add(e);
     }
 
-
     public void tick(){
         entityArray.forEach(Entity::tick);
     }

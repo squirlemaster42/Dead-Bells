@@ -7,11 +7,12 @@ import java.util.ArrayList;
 
 public abstract class Entity {
 
-    private final float x, y;
+    protected float x, y;
+
     private final int width, height;
     private final BufferedImage texture;
 
-    private final Rectangle bounds;
+    protected final Rectangle bounds;
 
     public Entity(final float x, final float y, final int width, final int height, final BufferedImage texture){
         this.x = x;
