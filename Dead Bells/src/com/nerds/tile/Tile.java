@@ -15,6 +15,11 @@ public abstract class Tile{
 
     public static void initTileMap(){
         tileMap.put(0, GrassTile.class);
+        tileMap.put(1, DirtTile.class);
+        tileMap.put(2, RockTile.class);
+        tileMap.put(3, StoneBrickTile.class);
+        tileMap.put(4, AlienTile.class);
+        tileMap.put(5, TreeTile.class);
     }
 
     private final float x, y;
