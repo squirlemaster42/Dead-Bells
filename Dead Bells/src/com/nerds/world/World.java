@@ -15,18 +15,21 @@ import java.util.ArrayList;
 public class World {
 
     private final EntitySet entitySet;
+    private final Tile[][] tileArray;
     private final int[][] tileSet;
     private ArrayList<Entity> entities;
 
     public World(final String path){
         this.tileSet = loadTileSet(path);
         this.entitySet = null;
+        this.tileArray = new Tile[1][1];
         entities = new ArrayList<>();
     }
 
     public World(final String path, final EntitySet entitySet){
         this.tileSet = loadTileSet(path);
         this.entitySet = entitySet;
+        this.tileArray = new Tile[1][1];
         entities = new ArrayList<>();
     }
 
@@ -77,6 +80,10 @@ public class World {
             return null;
         }
         return file;
+    }
+
+    private void init(){
+        
     }
 
     public ArrayList<Entity> getEntities(){
