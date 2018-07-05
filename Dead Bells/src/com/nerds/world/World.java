@@ -87,6 +87,7 @@ public class World {
             for(int i : tileSet[x]){
                 try {
                     tileArray[x][i] = (Tile) Tile.getMapValue(tileSet[x][i]).newInstance();
+                    tileArray[x][i].setXY(x * 64, i * 64);
                 } catch (InstantiationException e) {
                     e.printStackTrace();
                 } catch (IllegalAccessException e) {

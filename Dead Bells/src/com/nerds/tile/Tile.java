@@ -22,7 +22,7 @@ public abstract class Tile{
         tileMap.put(5, TreeTile.class);
     }
 
-    private final float x, y;
+    private float x, y;
     private final BufferedImage image;
     private final int tileID;
 
@@ -31,6 +31,11 @@ public abstract class Tile{
         this.y = y;
         this.image = image;
         this.tileID = tileID;
+    }
+
+    public void setXY(float x, float y){
+        this.x = x;
+        this.y = y;
     }
 
     public static Class getMapValue(int key){
