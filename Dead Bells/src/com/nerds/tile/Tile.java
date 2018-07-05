@@ -1,9 +1,7 @@
 package com.nerds.tile;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.HashMap;
-import java.util.Map;
 
 public abstract class Tile{
 
