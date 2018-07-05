@@ -22,14 +22,14 @@ public class World {
     public World(final String path){
         this.tileSet = loadTileSet(path);
         this.entitySet = null;
-        this.tileArray = new Tile[1][1];
+        this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
     }
 
     public World(final String path, final EntitySet entitySet){
         this.tileSet = loadTileSet(path);
         this.entitySet = entitySet;
-        this.tileArray = new Tile[1][1];
+        this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
     }
 
