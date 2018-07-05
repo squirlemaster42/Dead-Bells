@@ -22,6 +22,9 @@ public class Screen {
         canvas.setFocusable(false);
 
         frame.add(canvas);
+        canvas.setPreferredSize(dimension);
+        canvas.setMaximumSize(dimension);
+        canvas.setMinimumSize(dimension);
         frame.pack();
     }
 

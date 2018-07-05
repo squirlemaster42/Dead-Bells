@@ -1,6 +1,6 @@
 package com.nerds.main;
 
-import java.awt.*;
+import java.awt.Dimension;
 
 public class Main {
 
