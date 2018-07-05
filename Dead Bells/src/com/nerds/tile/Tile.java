@@ -2,12 +2,20 @@ package com.nerds.tile;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Tile{
 
     //Constants
     public static final int TILEWIDTH = 64;
     public static final int TILEHEIGHT = 64;
+
+    private static final Map<Integer, Class> tileMap = new HashMap<>();
+
+    public static void initTileMap(){
+        tileMap.put(0, GrassTile.class);
+    }
 
     private final float x, y;
     private final BufferedImage image;
