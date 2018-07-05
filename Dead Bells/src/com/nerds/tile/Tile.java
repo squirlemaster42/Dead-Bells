@@ -8,8 +8,8 @@ import java.util.Map;
 public abstract class Tile{
 
     //Constants
-    public static final int TILEWIDTH = 32;
-    public static final int TILEHEIGHT = 32;
+    public static final int TILEWIDTH = 64;
+    public static final int TILEHEIGHT = 64;
 
     private final float x, y;
     private final int width, height;
