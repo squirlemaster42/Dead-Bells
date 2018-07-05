@@ -15,21 +15,21 @@ import java.util.ArrayList;
 public class World {
 
     private final EntitySet entitySet;
-    private final Tile[][] tileArray;
+    private final Class[][] tileArray;
     private final int[][] tileSet;
     private ArrayList<Entity> entities;
 
     public World(final String path){
         this.tileSet = loadTileSet(path);
         this.entitySet = null;
-        this.tileArray = new Tile[tileSet.length][tileSet[0].length];
+        this.tileArray = new Class[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
     }
 
     public World(final String path, final EntitySet entitySet){
         this.tileSet = loadTileSet(path);
         this.entitySet = entitySet;
-        this.tileArray = new Tile[tileSet.length][tileSet[0].length];
+        this.tileArray = new Class[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
     }
 
@@ -83,7 +83,11 @@ public class World {
     }
 
     private void init(){
-        
+        for(int x = 0; x < tileSet.length; x++){
+            for(int i : tileSet[x]){
+                tileArray[x][i] = Tile.getMapValue(tileSet[x][i]);
+            }
+        }
     }
 
     public ArrayList<Entity> getEntities(){

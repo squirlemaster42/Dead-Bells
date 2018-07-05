@@ -33,6 +33,10 @@ public abstract class Tile{
         this.tileID = tileID;
     }
 
+    public static Class getMapValue(int key){
+        return tileMap.get(key);
+    }
+
     public abstract void tick();
     public abstract void render(Graphics g);
 
