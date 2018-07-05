@@ -12,15 +12,12 @@ public abstract class Tile{
     public static final int TILEHEIGHT = 64;
 
     private final float x, y;
-    private final int width, height;
     private final BufferedImage image;
     private final int tileID;
 
-    public Tile(final int tileID, final float x, final float y, final int width, final int height, BufferedImage image){
+    public Tile(final int tileID, final float x, final float y, BufferedImage image){
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
         this.image = image;
         this.tileID = tileID;
     }
