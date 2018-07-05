@@ -43,7 +43,11 @@ public abstract class Tile{
     }
 
     public abstract void tick();
-    public abstract void render(Graphics g);
+
+
+    public void render(Graphics g){
+        g.drawImage(image, (int) x, (int) y, null);
+    }
 
     public boolean isSolid(){
         return false;

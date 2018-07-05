@@ -15,9 +15,4 @@ public class DirtTile extends Tile{
 
     }
 
-    @Override
-    public void render(Graphics g) {
-
-    }
-
 }

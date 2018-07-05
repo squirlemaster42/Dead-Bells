@@ -15,9 +15,4 @@ public class TreeTile extends Tile{
 
     }
 
-    @Override
-    public void render(Graphics g) {
-
-    }
-
 }

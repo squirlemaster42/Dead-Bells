@@ -15,9 +15,4 @@ public class StoneBrickTile extends Tile{
 
     }
 
-    @Override
-    public void render(Graphics g) {
-
-    }
-
 }

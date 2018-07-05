@@ -15,9 +15,4 @@ public class AlienTile extends Tile{
 
     }
 
-    @Override
-    public void render(Graphics g) {
-
-    }
-
 }

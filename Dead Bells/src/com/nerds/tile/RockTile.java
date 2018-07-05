@@ -15,9 +15,4 @@ public class RockTile extends Tile{
 
     }
 
-    @Override
-    public void render(Graphics g) {
-
-    }
-
 }
