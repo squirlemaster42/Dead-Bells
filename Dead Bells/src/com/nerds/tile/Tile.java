@@ -11,7 +11,7 @@ public abstract class Tile{
     public static final int TILEWIDTH = 64;
     public static final int TILEHEIGHT = 64;
 
-    private static final Map<Integer, Class> tileMap = new HashMap<>();
+    private static final Map<Integer, Class<? extends Tile>> tileMap = new HashMap<>();
 
     public static void initTileMap(){
         tileMap.put(0, GrassTile.class);
