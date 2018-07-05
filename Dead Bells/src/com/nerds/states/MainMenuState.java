@@ -1,5 +1,7 @@
 package com.nerds.states;
 
+import com.nerds.world.World;
+
 import java.awt.Graphics;
 
 public class MainMenuState extends State{
@@ -16,5 +18,10 @@ public class MainMenuState extends State{
     @Override
     public void render(Graphics g) {
 
+    }
+
+    @Override
+    public World getWorld() {
+        return null;
     }
 }

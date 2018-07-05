@@ -1,6 +1,8 @@
 package com.nerds.utils;
 
 import com.nerds.main.Game;
+import com.nerds.states.State;
+import com.nerds.world.World;
 
 public class Handler {
 
@@ -12,5 +14,9 @@ public class Handler {
 
     public Game getGame(){
         return game;
+    }
+
+    public World getWorld(){
+        return State.getCurrentState().getWorld();
     }
 }

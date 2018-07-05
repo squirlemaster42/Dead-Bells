@@ -1,5 +1,7 @@
 package com.nerds.states;
 
+import com.nerds.world.World;
+
 import java.awt.Graphics;
 
 public abstract class State {
@@ -13,6 +15,7 @@ public abstract class State {
 
     public abstract void tick();
     public abstract void render(Graphics g);
+    public abstract World getWorld();
 
     public static void setState(State state){
         currentState = state;

@@ -1,6 +1,7 @@
 package com.nerds.entity;
 
 import com.nerds.tile.Tile;
+import com.nerds.utils.Handler;
 
 import java.awt.image.BufferedImage;
 
@@ -9,18 +10,18 @@ public abstract class Creature extends Entity {
     protected float speed;
     protected float xMove, yMove;
 
-    public Creature(final float x, final float y, final int width, final int height, final BufferedImage img) {
-        super(x, y, width, height, img);
+    public Creature(final Handler handler, final float x, final float y, final int width, final int height, final BufferedImage img) {
+        super(handler, x, y, width, height, img);
         xMove = 0;
         yMove = 0;
     }
 
     public void move(){
-        if(!checkEntityCollision(xMove, 0f)){
+        if(!checkEntityCollision(xMove, 0f, handler.getWorld().getEntities())){
             moveX();
         }
 
-        if(!checkEntityCollision(0f, yMove)) {
+        if(!checkEntityCollision(0f, yMove, handler.getWorld().getEntities())) {
             moveY();
         }
     }

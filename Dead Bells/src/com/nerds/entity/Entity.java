@@ -1,5 +1,7 @@
 package com.nerds.entity;
 
+import com.nerds.utils.Handler;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -7,21 +9,23 @@ import java.util.ArrayList;
 
 public abstract class Entity {
 
-    protected float x, y;
+    float x, y;
 
     private final int width, height;
     private final BufferedImage texture;
 
-    protected final Rectangle bounds;
+    final Rectangle bounds;
+    final Handler handler;
 
-    public Entity(final float x, final float y, final int width, final int height, final BufferedImage texture){
+    public Entity(final Handler handler, final float x, final float y, final int width, final int height, final BufferedImage texture){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
         this.texture = texture;
+        this.handler = handler;
 
-        bounds = new Rectangle((int) x, (int) y, width, height);
+        this.bounds = new Rectangle((int) x, (int) y, width, height);
     }
 
     public abstract void tick();
