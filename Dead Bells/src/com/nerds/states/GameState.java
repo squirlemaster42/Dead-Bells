@@ -6,11 +6,12 @@ import java.awt.*;
 
 public class GameState extends State {
 
+    private final World world;
+
     public GameState(){
         super("gameState");
+        world = new World("TODO");
     }
-
-    private final World world = new World("TODO");
 
     @Override
     public void tick(){
@@ -24,6 +25,6 @@ public class GameState extends State {
 
     @Override
     public World getWorld(){
-        return null;
+        return world;
     };
 }
