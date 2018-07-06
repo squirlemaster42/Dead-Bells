@@ -24,6 +24,7 @@ public class World {
         this.entitySet = null;
         this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
+        init();
     }
 
     public World(final String path, final EntitySet entitySet){
@@ -31,6 +32,7 @@ public class World {
         this.entitySet = entitySet;
         this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
+        init();
     }
 
     public void tick(){
@@ -88,9 +90,7 @@ public class World {
                 try {
                     tileArray[x][i] = (Tile) Tile.getMapValue(tileSet[x][i]).newInstance();
                     tileArray[x][i].setXY(x * 64, i * 64);
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
+                } catch (InstantiationException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
