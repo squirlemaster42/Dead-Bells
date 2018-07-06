@@ -1,13 +1,14 @@
 package com.nerds.entity;
 
 import com.nerds.utils.Handler;
+import com.nerds.input.KeyManager;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 public class Character extends Creature {
+
+    KeyManager keyManager = new KeyManager();
 
     public Character(Handler handler, float x, float y, int width, int height, BufferedImage img) {
         super(handler, x, y, width, height, img);
@@ -16,6 +17,23 @@ public class Character extends Creature {
     @Override
     public void tick(){
 
+        if(keyManager.w) {
+            yMove = -5;
+        }
+        else if(keyManager.s){
+            yMove = 5;
+        }
+        else if(keyManager.a){
+            xMove = -5;
+        }
+        else if(keyManager.d){
+            xMove = 0;
+        }
+        else{
+            xMove = 0;
+            yMove = 0;
+        }
+        super.move();
     }
 
     @Override
