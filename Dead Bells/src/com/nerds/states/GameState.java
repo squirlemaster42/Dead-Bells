@@ -16,15 +16,15 @@ public class GameState extends State {
     @Override
     public void tick(){
         world.tick();
-    };
+    }
 
     @Override
     public void render(Graphics g){
         world.render(g);
-    };
+    }
 
     @Override
     public World getWorld(){
         return world;
-    };
-}
+    }
+
