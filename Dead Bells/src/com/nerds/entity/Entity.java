@@ -12,7 +12,7 @@ public abstract class Entity {
     float x, y;
 
     private final int width, height;
-    private final BufferedImage texture;
+    final BufferedImage texture;
 
     final Rectangle bounds;
     final Handler handler;
