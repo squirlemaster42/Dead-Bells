@@ -13,7 +13,6 @@ public class Player extends Creature {
 
     @Override
     public void tick(){
-
         if(handler.getGame().getKeyManager().w) {
             yMove = -5;
         }
@@ -21,7 +20,7 @@ public class Player extends Creature {
             yMove = 5;
         }
         else{
-            y = 0;
+            yMove = 0;
         }
 
         if(handler.getGame().getKeyManager().a){

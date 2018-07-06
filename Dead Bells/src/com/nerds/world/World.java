@@ -43,6 +43,8 @@ public class World {
     }
 
     public void tick(){
+        character.tick();
+
         if(entitySet != null){
             entitySet.tick();
         }
@@ -61,10 +63,12 @@ public class World {
                 tileArray[i][j].render(g);
             }
         }
+
+        character.render(g);
     }
 
     public Tile getTile(final int x, final int y){
-        return null;
+        return tileArray[x][y];
     }
 
     private int[][] loadTileSet(final String path){
