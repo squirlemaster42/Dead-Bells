@@ -23,15 +23,18 @@ public class Character extends Creature {
         else if(keyManager.s){
             yMove = 5;
         }
-        else if(keyManager.a){
+        else{
+            y = 0;
+        }
+
+        if(keyManager.a){
             xMove = -5;
         }
         else if(keyManager.d){
-            xMove = 0;
+            xMove = 5;
         }
         else{
             xMove = 0;
-            yMove = 0;
         }
         super.move();
     }
