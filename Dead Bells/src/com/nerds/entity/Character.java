@@ -10,8 +10,8 @@ public class Character extends Creature {
 
     KeyManager keyManager = new KeyManager();
 
-    public Character(Handler handler, float x, float y, int width, int height, BufferedImage img) {
-        super(handler, x, y, width, height, img);
+    public Character(Handler handler, float x, float y, int width, int height, BufferedImage texture) {
+        super(handler, x, y, width, height, texture);
     }
 
     @Override
@@ -41,6 +41,6 @@ public class Character extends Creature {
 
     @Override
     public void render(Graphics g){
-
+        g.drawImage(texture, (int) x, (int) y, width, height, null);
     }
 }

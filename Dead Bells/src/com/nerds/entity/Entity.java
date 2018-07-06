@@ -11,7 +11,7 @@ public abstract class Entity {
 
     float x, y;
 
-    private final int width, height;
+    final int width, height;
     final BufferedImage texture;
 
     final Rectangle bounds;

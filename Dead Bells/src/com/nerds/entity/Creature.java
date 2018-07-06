@@ -10,8 +10,8 @@ public abstract class Creature extends Entity {
     protected float speed;
     protected float xMove, yMove;
 
-    public Creature(final Handler handler, final float x, final float y, final int width, final int height, final BufferedImage img) {
-        super(handler, x, y, width, height, img);
+    public Creature(final Handler handler, final float x, final float y, final int width, final int height, final BufferedImage texture) {
+        super(handler, x, y, width, height, texture);
         xMove = 0;
         yMove = 0;
     }
