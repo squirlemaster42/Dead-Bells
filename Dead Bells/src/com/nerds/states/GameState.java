@@ -10,7 +10,7 @@ public class GameState extends State {
 
     public GameState() {
         super("gameState");
-        world = new World("TODO");
+        world = new World("res/world/firstWorld.lvl");
     }
 
     @Override

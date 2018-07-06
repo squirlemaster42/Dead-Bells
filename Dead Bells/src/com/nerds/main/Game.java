@@ -4,6 +4,7 @@ import com.nerds.graphics.Assets;
 import com.nerds.graphics.Screen;
 import com.nerds.input.KeyManager;
 import com.nerds.input.MouseManager;
+import com.nerds.states.GameState;
 import com.nerds.states.MainMenuState;
 import com.nerds.states.State;
 
@@ -24,6 +25,7 @@ public class Game implements Runnable{
 
     //States
     private State mainMenu;
+    private State gameState;
 
     public Game(final Dimension screenSize){
         this.screenSize = screenSize;
@@ -43,7 +45,8 @@ public class Game implements Runnable{
         Assets.init();
 
         mainMenu = new MainMenuState();
-        State.setState(mainMenu);
+        gameState = new GameState();
+        State.setState(gameState);
     }
 
     public void tick(){
