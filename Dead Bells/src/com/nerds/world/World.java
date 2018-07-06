@@ -2,6 +2,7 @@ package com.nerds.world;
 
 import com.nerds.entity.Entity;
 import com.nerds.entity.EntitySet;
+import com.nerds.graphics.Assets;
 import com.nerds.tile.Tile;
 import com.nerds.utils.Utils;
 
@@ -16,12 +17,14 @@ public class World {
     private final Tile[][] tileArray;
     private final int[][] tileSet;
     private ArrayList<Entity> entities;
+    private Character character;
 
     public World(final String path){
         this.tileSet = loadTileSet(path);
         this.entitySet = null;
         this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
+        character = new Character(null, 100, 100, 64, 64, Assets.tree);
         init();
     }
 
@@ -30,6 +33,7 @@ public class World {
         this.entitySet = entitySet;
         this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
+        character = new Character(null, 100, 100, 64, 64, Assets.tree);
         init();
     }
 
