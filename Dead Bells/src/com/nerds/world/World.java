@@ -2,14 +2,19 @@ package com.nerds.world;
 
 import com.nerds.entity.Entity;
 import com.nerds.entity.EntitySet;
+import com.nerds.entity.Player;
 import com.nerds.graphics.Assets;
 import com.nerds.tile.Tile;
+import com.nerds.utils.Handler;
 import com.nerds.utils.Utils;
 
 import java.awt.Graphics;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class World {
 
@@ -17,23 +22,23 @@ public class World {
     private final Tile[][] tileArray;
     private final int[][] tileSet;
     private ArrayList<Entity> entities;
-    private Character character;
+    private final Player character;
 
-    public World(final String path){
+    public World(final Handler handler, final String path){
         this.tileSet = loadTileSet(path);
         this.entitySet = null;
         this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
-        character = new Character(null, 100, 100, 64, 64, Assets.tree);
+        character = new Player(handler, 100f, 100f, 64, 64, Assets.tree);
         init();
     }
 
-    public World(final String path, final EntitySet entitySet){
+    public World(final Handler handler, final String path, final EntitySet entitySet){
         this.tileSet = loadTileSet(path);
         this.entitySet = entitySet;
         this.tileArray = new Tile[tileSet.length][tileSet[0].length];
         entities = new ArrayList<>();
-        character = new Character(null, 100, 100, 64, 64, Assets.tree);
+        character = new Player(handler, 100f, 100f, 64, 64, Assets.tree);
         init();
     }
 

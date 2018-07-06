@@ -1,36 +1,33 @@
 package com.nerds.entity;
 
 import com.nerds.utils.Handler;
-import com.nerds.input.KeyManager;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-public class Character extends Creature {
+public class Player extends Creature {
 
-    KeyManager keyManager = new KeyManager();
-
-    public Character(Handler handler, float x, float y, int width, int height, BufferedImage texture) {
+    public Player(final Handler handler, final float x, final float y, final int width, final int height, final BufferedImage texture) {
         super(handler, x, y, width, height, texture);
     }
 
     @Override
     public void tick(){
 
-        if(keyManager.w) {
+        if(handler.getGame().getKeyManager().w) {
             yMove = -5;
         }
-        else if(keyManager.s){
+        else if(handler.getGame().getKeyManager().s){
             yMove = 5;
         }
         else{
             y = 0;
         }
 
-        if(keyManager.a){
+        if(handler.getGame().getKeyManager().a){
             xMove = -5;
         }
-        else if(keyManager.d){
+        else if(handler.getGame().getKeyManager().d){
             xMove = 5;
         }
         else{

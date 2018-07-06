@@ -1,5 +1,6 @@
 package com.nerds.states;
 
+import com.nerds.utils.Handler;
 import com.nerds.world.World;
 
 import java.awt.Graphics;
@@ -8,8 +9,10 @@ public abstract class State {
 
     private final String name;
     private static State currentState;
+    final Handler handler;
 
-    public State(final String name){
+    public State(final Handler handler, final String name){
+        this.handler = handler;
         this.name = name;
     }
 

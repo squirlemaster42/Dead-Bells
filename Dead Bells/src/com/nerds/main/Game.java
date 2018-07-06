@@ -8,6 +8,7 @@ import com.nerds.states.GameState;
 import com.nerds.states.MainMenuState;
 import com.nerds.states.State;
 import com.nerds.tile.Tile;
+import com.nerds.utils.Handler;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -23,6 +24,7 @@ public class Game implements Runnable{
     private final Dimension screenSize;
     private final KeyManager keyManager;
     private final MouseManager mouseManager;
+    private final Handler handler;
 
     //States
     private State mainMenu;
@@ -30,7 +32,7 @@ public class Game implements Runnable{
 
     public Game(final Dimension screenSize){
         this.screenSize = screenSize;
-
+        handler = new Handler(this);
         keyManager = new KeyManager();
         mouseManager = new MouseManager();
     }
@@ -46,8 +48,8 @@ public class Game implements Runnable{
         Assets.init();
         Tile.initTileMap();
 
-        mainMenu = new MainMenuState();
-        gameState = new GameState();
+        mainMenu = new MainMenuState(handler);
+        gameState = new GameState(handler);
         State.setState(gameState);
     }
 
@@ -129,5 +131,9 @@ public class Game implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public KeyManager getKeyManager(){
+        return keyManager;
     }
 }

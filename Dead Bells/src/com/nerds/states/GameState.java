@@ -1,5 +1,6 @@
 package com.nerds.states;
 
+import com.nerds.utils.Handler;
 import com.nerds.world.World;
 
 import java.awt.Graphics;
@@ -8,10 +9,10 @@ public class GameState extends State {
 
     private final World world;
 
-    public GameState() {
-        super("gameState");
+    public GameState(final Handler handler) {
+        super(handler,"gameState");
 
-        world = new World("Dead Bells/res/worlds/firstWorld.lvl");
+        world = new World(super.handler, "Dead Bells/res/worlds/firstWorld.lvl");
     }
 
     @Override
