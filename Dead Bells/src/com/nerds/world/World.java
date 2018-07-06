@@ -46,6 +46,12 @@ public class World {
             entitySet.render(g);
         }
         entities.forEach(entity -> render(g));
+
+        for(int i = 0; i < tileArray.length; i++){
+            for(int j = 0; j < tileArray[0].length; j++){
+                tileArray[i][j].render(g);
+            }
+        }
     }
 
     public Tile getTile(final int x, final int y){
