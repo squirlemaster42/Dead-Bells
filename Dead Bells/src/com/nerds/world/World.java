@@ -91,7 +91,7 @@ public class World {
 
     private void init(){
         for(int x = 0; x < tileSet.length; x++){
-            for(int i : tileSet[x]){
+            for(int i = 0; i < tileSet[0].length; i++){
                 try {
                     tileArray[x][i] = (Tile) Tile.getMapValue(tileSet[x][i]).newInstance();
                     tileArray[x][i].setXY(x * 64, i * 64);

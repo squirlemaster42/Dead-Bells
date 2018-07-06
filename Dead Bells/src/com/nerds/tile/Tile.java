@@ -52,4 +52,9 @@ public abstract class Tile{
     public boolean isSolid(){
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Tile{" + "tileID=" + tileID + '}';
+    }
 }
