@@ -15,4 +15,8 @@ public class StoneBrickTile extends Tile{
 
     }
 
+    @Override
+    public boolean isSolid() {
+        return true;
+    }
 }
