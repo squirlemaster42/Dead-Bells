@@ -46,7 +46,7 @@ public abstract class Tile{
 
 
     public void render(Graphics g){
-        g.drawImage(image, (int) x, (int) y, null);
+        g.drawImage(image, (int) x, (int) y, TILEWIDTH, TILEHEIGHT, null);
     }
 
     public boolean isSolid(){

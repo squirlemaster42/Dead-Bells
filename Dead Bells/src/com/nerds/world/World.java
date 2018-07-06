@@ -94,7 +94,7 @@ public class World {
             for(int i = 0; i < tileSet[0].length; i++){
                 try {
                     tileArray[x][i] = (Tile) Tile.getMapValue(tileSet[x][i]).newInstance();
-                    tileArray[x][i].setXY(x * 64, i * 64);
+                    tileArray[x][i].setXY(x * Tile.TILEWIDTH, i * Tile.TILEHEIGHT);
                 } catch (InstantiationException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
