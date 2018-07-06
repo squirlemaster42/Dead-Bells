@@ -2,7 +2,7 @@ package com.nerds.states;
 
 import com.nerds.world.World;
 
-import java.awt.*;
+import java.awt.Graphics;
 
 public class GameState extends State {
 
@@ -10,7 +10,8 @@ public class GameState extends State {
 
     public GameState() {
         super("gameState");
-        world = new World("res/world/firstWorld.lvl");
+
+        world = new World("Dead Bells/res/worlds/firstWorld.lvl");
     }
 
     @Override
@@ -28,4 +29,3 @@ public class GameState extends State {
         return world;
     }
 }
-

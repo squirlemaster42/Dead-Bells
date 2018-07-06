@@ -6,10 +6,7 @@ import com.nerds.tile.Tile;
 import com.nerds.utils.Utils;
 
 import java.awt.Graphics;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class World {
@@ -58,7 +55,8 @@ public class World {
         int[][] file;
 
         try{
-            BufferedReader br = new BufferedReader(new FileReader(path));
+            File filePath = new File(path);
+            BufferedReader br = new BufferedReader(new FileReader(filePath.getAbsoluteFile()));
             String[] firstLine = br.readLine().split(" ");
             file = new int[Utils.parseInt(firstLine[0])][Utils.parseInt(firstLine[1])];
 
