@@ -16,6 +16,11 @@ public class Platform {
 
     //Used to test platform locations
     public void render(Graphics g){
+        g.setColor(Color.RED);
         g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+    }
+
+    public boolean contains(int x, int y){
+        return bounds.contains(x, y);
     }
 }

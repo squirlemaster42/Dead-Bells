@@ -1,6 +1,5 @@
 package com.nerds.entity;
 
-import com.nerds.tile.Tile;
 import com.nerds.utils.Handler;
 
 import java.awt.image.BufferedImage;
@@ -28,52 +27,52 @@ public abstract class Creature extends Entity {
 
     public void moveX(){
         if(xMove > 0){//Moving right
-            int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
+            int tx = (int) (x + xMove + bounds.x + bounds.width) / 32;
 
-            if(!collisionWithPlatform(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
-                    !collisionWithPlatform(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)){
+            if(!collisionWithPlatform(tx, (int) (y + bounds.y) / 32) &&
+                    !collisionWithPlatform(tx, (int) (y + bounds.y + bounds.height) / 32)){
                 x += xMove;
             }else{
-                x = tx * Tile.TILEWIDTH - bounds.x - bounds.width - 1;
+                x = tx * 32 - bounds.x - bounds.width - 1;
             }
 
         }else if(xMove < 0){//Moving left
-            int tx = (int) (x + xMove + bounds.x) / Tile.TILEWIDTH;
+            int tx = (int) (x + xMove + bounds.x) / 32;
 
-            if(!collisionWithPlatform(tx, (int) (y + bounds.y) / Tile.TILEHEIGHT) &&
-                    !collisionWithPlatform(tx, (int) (y + bounds.y + bounds.height) / Tile.TILEHEIGHT)){
+            if(!collisionWithPlatform(tx, (int) (y + bounds.y) / 32) &&
+                    !collisionWithPlatform(tx, (int) (y + bounds.y + bounds.height) / 32)){
                 x += xMove;
             }else{
-                x = tx * Tile.TILEWIDTH + Tile.TILEWIDTH - bounds.x;
+                x = tx * 32 + 32 - bounds.x;
             }
         }
     }
 
     public void moveY(){
         if(yMove < 0){//Up
-            int ty = (int) (y + yMove + bounds.y) / Tile.TILEHEIGHT;
+            int ty = (int) (y + yMove + bounds.y) / 32;
 
-            if(!collisionWithPlatform((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
-                    !collisionWithPlatform((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)){
+            if(!collisionWithPlatform((int) (x + bounds.x) / 32, ty) &&
+                    !collisionWithPlatform((int) (x + bounds.x + bounds.width) / 32, ty)){
                 y += yMove;
             }else{
-                y = ty * Tile.TILEHEIGHT + Tile.TILEHEIGHT - bounds.y;
+                y = ty * 32 + 32 - bounds.y;
             }
 
         }else if(yMove > 0){//Down
-            int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
+            int ty = (int) (y + yMove + bounds.y + bounds.height) / 32;
 
-            if(!collisionWithPlatform((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
-                    !collisionWithPlatform((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)){
+            if(!collisionWithPlatform((int) (x + bounds.x) / 32, ty) &&
+                    !collisionWithPlatform((int) (x + bounds.x + bounds.width) / 32, ty)){
                 y += yMove;
             }else{
-                y = ty * Tile.TILEHEIGHT - bounds.y - bounds.height - 1;
+                y = ty * 32 - bounds.y - bounds.height - 1;
             }
         }
     }
 
     protected boolean collisionWithPlatform(int x, int y){
-        return handler.getWorld().collisionWithPlatform();
+        return handler.getWorld().collisionWithPlatform(x, y);
     }
 
     //Getters and setters
