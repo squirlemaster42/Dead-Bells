@@ -12,7 +12,7 @@ public class GameState extends State {
     public GameState(final Handler handler) {
         super(handler,"gameState");
 
-        world = new World(super.handler, "Dead Bells/res/worlds/firstWorld.lvl");
+        world = new World(super.handler);
     }
 
     @Override

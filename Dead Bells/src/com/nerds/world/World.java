@@ -13,7 +13,7 @@ public class World {
     private final ArrayList<Entity> entities;
     private final Player character;
 
-    public World(final Handler handler, final String path){
+    public World(final Handler handler){
         character = new Player(handler, 100f, 100f, 64, 64, Assets.tree);
         entities = new ArrayList<>();
     }
