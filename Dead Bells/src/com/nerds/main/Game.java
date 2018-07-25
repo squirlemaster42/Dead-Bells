@@ -7,7 +7,6 @@ import com.nerds.input.MouseManager;
 import com.nerds.states.GameState;
 import com.nerds.states.MainMenuState;
 import com.nerds.states.State;
-import com.nerds.tile.Tile;
 import com.nerds.utils.Handler;
 
 import java.awt.Dimension;
@@ -46,7 +45,6 @@ public class Game implements Runnable{
         screen.getCanvas().addMouseMotionListener(mouseManager);
 
         Assets.init();
-        Tile.initTileMap();
 
         mainMenu = new MainMenuState(handler);
         gameState = new GameState(handler);

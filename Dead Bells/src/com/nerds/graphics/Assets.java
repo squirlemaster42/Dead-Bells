@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 
 
-    public static BufferedImage tree, dirt, grass, rock, stoneBrick, alien;
+    public static BufferedImage tree, dirt, grass, rock, stoneBrick, alien, testWorld;
 
     private static final int width = 32, height = 32;
 
@@ -18,5 +18,7 @@ public class Assets {
         stoneBrick = ground.crop(width * 3, 0, width, height);
         tree = ground.crop(0, height, width, height);
         alien = ground.crop(width, height, width, height);
+
+        testWorld = ImageLoader.loadImage("/textures/world.png");
     }
 }
