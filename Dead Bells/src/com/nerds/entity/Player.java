@@ -1,42 +1,45 @@
 package com.nerds.entity;
 
+import com.nerds.graphics.Assets;
 import com.nerds.utils.Handler;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 
-public class Player extends Creature {
+public class Player extends Entity {
 
-    public Player(final Handler handler, final float x, final float y, final int width, final int height, final BufferedImage texture) {
-        super(handler, x, y, width, height, texture);
+    private int xMove = 0;
+    private int yMove = 0;
+
+    public Player(Handler handler, int x, int y, int width, int height) {
+        super(handler, x, y, width, height);
     }
 
     @Override
-    public void tick(){
-        if(handler.getGame().getKeyManager().w) {
-            yMove = -5;
-        }
-        else if(handler.getGame().getKeyManager().s){
-            yMove = 5;
-        }
-        else{
-            yMove = 0;
-        }
+    public void tick() {
+        moveX();
+        moveY();
+    }
 
-        if(handler.getGame().getKeyManager().a){
-            xMove = -5;
+    private void moveX(){
+        if(xMove > 0){ //Moving Right
+            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+
+            }
+        }else if(xMove < 0){//Moving Left
+
         }
-        else if(handler.getGame().getKeyManager().d){
-            xMove = 5;
+    }
+
+    private void moveY(){
+        if(yMove < 0){ //Moving Right
+
+        }else if(yMove > 0){//Moving Left
+
         }
-        else{
-            xMove = 0;
-        }
-        super.move();
     }
 
     @Override
-    public void render(Graphics g){
-        g.drawImage(texture, (int) x, (int) y, width, height, null);
+    public void render(Graphics g) {
+        g.drawImage(Assets.tree, bounds.x, bounds.y, bounds.width, bounds.height, null);
     }
 }

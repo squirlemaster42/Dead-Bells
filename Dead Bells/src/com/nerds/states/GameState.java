@@ -12,17 +12,17 @@ public class GameState extends State {
     public GameState(final Handler handler) {
         super(handler,"gameState");
 
-        world = new World(super.handler);
+        world = null;
     }
 
     @Override
     public void tick() {
-        world.tick();
+
     }
 
     @Override
     public void render(Graphics g) {
-        world.render(g);
+
     }
 
     @Override
