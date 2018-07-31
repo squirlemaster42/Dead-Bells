@@ -23,18 +23,24 @@ public class Player extends Entity {
     private void moveX(){
         if(xMove > 0){ //Moving Right
             if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
-
+                bounds.x += xMove;
             }
         }else if(xMove < 0){//Moving Left
-
+            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+                bounds.x += xMove;
+            }
         }
     }
 
     private void moveY(){
         if(yMove < 0){ //Moving Right
-
+            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+                bounds.y += yMove;
+            }
         }else if(yMove > 0){//Moving Left
-
+            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+                bounds.y += yMove;
+            }
         }
     }
 

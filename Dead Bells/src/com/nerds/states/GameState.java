@@ -1,6 +1,7 @@
 package com.nerds.states;
 
 import com.nerds.utils.Handler;
+import com.nerds.world.TestWorld;
 import com.nerds.world.World;
 
 import java.awt.Graphics;
@@ -12,17 +13,17 @@ public class GameState extends State {
     public GameState(final Handler handler) {
         super(handler,"gameState");
 
-        world = null;
+        world = new TestWorld(handler);
     }
 
     @Override
     public void tick() {
-
+        world.tick();
     }
 
     @Override
     public void render(Graphics g) {
-
+        world.render(g);
     }
 
     @Override
