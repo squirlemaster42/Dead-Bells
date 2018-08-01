@@ -16,6 +16,22 @@ public class Player extends Entity {
 
     @Override
     public void tick() {
+        if(super.getHandler().getGame().getKeyManager().s){
+            yMove = 5;
+        }else if(super.getHandler().getGame().getKeyManager().w){
+            yMove = -5;
+        }else{
+            yMove = 0;
+        }
+
+        if(super.getHandler().getGame().getKeyManager().a){
+            xMove = -5;
+        }else if(super.getHandler().getGame().getKeyManager().d){
+            xMove = 5;
+        }else{
+            xMove = 0;
+        }
+
         moveX();
         moveY();
     }
