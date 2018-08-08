@@ -22,7 +22,7 @@ public class Platform {
         g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     }
 
-    public boolean contains(int x, int y){
-        return bounds.contains(x, y);
+    public boolean intersects(Rectangle rect){
+        return bounds.intersects(rect);
     }
 }

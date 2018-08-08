@@ -1,5 +1,6 @@
 package com.nerds.world;
 
+import com.nerds.platforms.Platform;
 import com.nerds.utils.Handler;
 
 import java.awt.*;
@@ -15,5 +16,5 @@ public abstract class World {
     public abstract void tick();
     public abstract void render(Graphics g);
 
-    public abstract boolean checkPlatformCollision(int x, int y);
+    public abstract boolean checkPlatformCollision(Rectangle rect);
 }

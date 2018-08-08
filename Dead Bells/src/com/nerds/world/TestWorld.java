@@ -5,7 +5,7 @@ import com.nerds.graphics.Assets;
 import com.nerds.platforms.Platform;
 import com.nerds.utils.Handler;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class TestWorld extends World {
@@ -37,9 +37,9 @@ public class TestWorld extends World {
     }
 
     @Override
-    public boolean checkPlatformCollision(int x, int y) {
+    public boolean checkPlatformCollision(Rectangle rect) {
         for(Platform p : platformArray){
-            if(p.contains(x, y)){
+            if(p.intersects(rect)){
                 return true;
             }
         }

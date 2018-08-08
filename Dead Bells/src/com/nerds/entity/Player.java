@@ -3,7 +3,7 @@ package com.nerds.entity;
 import com.nerds.graphics.Assets;
 import com.nerds.utils.Handler;
 
-import java.awt.Graphics;
+import java.awt.*;
 
 public class Player extends Entity {
 
@@ -38,11 +38,11 @@ public class Player extends Entity {
 
     private void moveX(){
         if(xMove > 0){ //Moving Right
-            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+            if(!getHandler().getWorld().checkPlatformCollision(bounds)){
                 bounds.x += xMove;
             }
         }else if(xMove < 0){//Moving Left
-            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+            if(!getHandler().getWorld().checkPlatformCollision(bounds)){
                 bounds.x += xMove;
             }
         }
@@ -50,11 +50,11 @@ public class Player extends Entity {
 
     private void moveY(){
         if(yMove < 0){ //Moving Right
-            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+            if(!getHandler().getWorld().checkPlatformCollision(bounds)){
                 bounds.y += yMove;
             }
         }else if(yMove > 0){//Moving Left
-            if(!getHandler().getWorld().checkPlatformCollision(bounds.x, bounds.y)){
+            if(!getHandler().getWorld().checkPlatformCollision(bounds)){
                 bounds.y += yMove;
             }
         }
@@ -62,6 +62,8 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics g) {
+        g.setColor(Color.RED);
         g.drawImage(Assets.tree, bounds.x, bounds.y, bounds.width, bounds.height, null);
+        g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
     }
 }
