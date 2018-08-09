@@ -29,7 +29,7 @@ public class TestWorld extends World {
     public void render(Graphics g) {
         g.drawImage(Assets.testWorld, 0, 0, 1280, 720, null);
 
-        for(Platform p : platformArray){
+        for(Platform p : platformArray) {
             p.render(g);
         }
 
@@ -37,9 +37,9 @@ public class TestWorld extends World {
     }
 
     @Override
-    public boolean checkPlatformCollision(Rectangle rect) {
-        for(Platform p : platformArray){
-            if(p.intersects(rect)){
+    public boolean checkPlatformCollision(int x, int y) {
+        for(Platform p : platformArray) {
+            if(p.intersects(new Rectangle(x, y, player.bounds.width, player.bounds.height))){
                 return true;
             }
         }

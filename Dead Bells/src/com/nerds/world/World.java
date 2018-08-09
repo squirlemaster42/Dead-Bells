@@ -16,5 +16,5 @@ public abstract class World {
     public abstract void tick();
     public abstract void render(Graphics g);
 
-    public abstract boolean checkPlatformCollision(Rectangle rect);
+    public abstract boolean checkPlatformCollision(int x, int y);
 }
