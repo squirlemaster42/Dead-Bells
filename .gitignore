@@ -24,3 +24,7 @@ hs_err_pid*
 
 .idea/*
 .iml
+Dead Bells/.idea/misc.xml
+Dead Bells/.idea/modules.xml
+Dead Bells/.idea/workspace.xml
+Dead Bells/.idea/vcs.xml
